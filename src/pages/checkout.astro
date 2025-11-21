@@ -1,0 +1,171 @@
+---
+import MainLayout from "../layouts/Layout.astro";
+---
+
+<MainLayout>
+  <section>
+    <h1>Datos de facturación y pago</h1>
+    <p>
+      Introduce tus datos de facturación y el método de pago para completar la suscripción.
+    </p>
+  </section>
+
+  <!-- Contenido principal: formularios + resumen -->
+  <section>
+    <!-- Columna izquierda: datos -->
+    <div>
+      <!-- Bloque 1: datos de facturación -->
+      <section>
+        <h2>Datos de facturación</h2>
+
+        <form action="/checkout" method="post">
+          <div>
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="apellidos">Apellidos</label>
+            <input
+              type="text"
+              id="apellidos"
+              name="apellidos"
+              placeholder="Tus apellidos"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tuemail@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="direccion">Dirección</label>
+            <input
+              type="text"
+              id="direccion"
+              name="direccion"
+              placeholder="Calle, número, piso..."
+              required
+            />
+          </div>
+
+          <div>
+            <label for="ciudad">Ciudad</label>
+            <input
+              type="text"
+              id="ciudad"
+              name="ciudad"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="cp">Código postal</label>
+            <input
+              type="text"
+              id="cp"
+              name="cp"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="pais">País</label>
+            <input
+              type="text"
+              id="pais"
+              name="pais"
+              required
+            />
+          </div>
+
+          <!-- Bloque 2: datos de pago -->
+          <section>
+            <h2>Datos de pago</h2>
+
+            <div>
+              <label for="tarjeta">Número de tarjeta</label>
+              <input
+                type="text"
+                id="tarjeta"
+                name="tarjeta"
+                placeholder="1234 5678 9012 3456"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="caducidad">Fecha de caducidad</label>
+              <input
+                type="month"
+                id="caducidad"
+                name="caducidad"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="cvv">CVV</label>
+              <input
+                type="text"
+                id="cvv"
+                name="cvv"
+                placeholder="123"
+                required
+              />
+            </div>
+          </section>
+
+          <!-- Botón para confirmar -->
+          <div>
+            <button type="submit">Confirmar pago</button>
+          </div>
+
+          <!-- Zona para mensajes de error o validación -->
+          <div>
+            <p>
+              [Aquí se mostrarían posibles errores del formulario o del pago]
+            </p>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Columna derecha: resumen del pedido -->
+    <div>
+      <section>
+        <h2>Resumen del pedido</h2>
+        <p>Plan seleccionado: <strong>Plan Pro</strong></p>
+        <p>Tipo de suscripción: <strong>Mensual</strong></p>
+        <p>Total: <strong>19,99 €/mes</strong></p>
+
+        <p>
+          Al confirmar el pago, se activará tu suscripción a DevSuite y podrás
+          acceder a todas las herramientas incluidas en tu plan.
+        </p>
+
+        <!-- Simulación de mensaje de confirmación futura -->
+        <div>
+          <p>
+            [Tras un pago real, aquí se mostraría un mensaje de confirmación y
+            podrías redirigir al usuario a su área de suscripciones]
+          </p>
+        </div>
+      </section>
+    </div>
+  </section>
+</MainLayout>

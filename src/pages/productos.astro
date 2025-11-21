@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+    <section>
+        <h1>Productos incluidos en Demineitor</h1>
+        <p>
+          Explora las herramientas disponibles en el paquete: editor de textos, editor de imágenes,
+          editor de vídeo e IDE.
+        </p>
+      </section>
+    
+      <!-- Opcional: barra de búsqueda/filtro simple -->
+      <section>
+        <h2>Buscar herramientas</h2>
+        <form action="/productos" method="get">
+          <label for="busqueda">Buscar herramienta:</label>
+          <input id="busqueda" type="search" name="q" placeholder="Editor de..." />
+          <button type="submit">Buscar</button>
+        </form>
+      </section>
+    
+      <!-- Grid de productos -->
+      <section>
+        <h2>Herramientas</h2>
+    
+        <div>
+          <!-- Producto 1 -->
+          <article>
+            <h3>Editor de textos</h3>
+            <!-- Aquí en el futuro podrías poner una imagen -->
+            <div>
+              <p>[Imagen del editor de textos]</p>
+            </div>
+            <p>
+              Redacta y organiza documentos, apuntes y artículos con soporte para proyectos largos.
+            </p>
+            <p>Incluido en: Plan Básico, Pro y Empresa.</p>
+            <a href="/carrito">Ir a suscripción</a>
+          </article>
+    
+          <!-- Producto 2 -->
+          <article>
+            <h3>Editor de imágenes</h3>
+            <div>
+              <p>[Imagen del editor de imágenes]</p>
+            </div>
+            <p>
+              Retoque y edición de imágenes para recursos gráficos, mockups y redes sociales.
+            </p>
+            <p>Incluido en: Plan Básico, Pro y Empresa.</p>
+            <a href="/carrito">Ir a suscripción</a>
+          </article>
+    
+          <!-- Producto 3 -->
+          <article>
+            <h3>Editor de vídeo</h3>
+            <div>
+              <p>[Imagen del editor de vídeo]</p>
+            </div>
+            <p>
+              Crea y edita vídeos para presentaciones, redes sociales o demostraciones de producto.
+            </p>
+            <p>Incluido en: Plan Pro y Empresa.</p>
+            <a href="/carrito">Ir a suscripción</a>
+          </article>
+    
+          <!-- Producto 4 -->
+          <article>
+            <h3>IDE</h3>
+            <div>
+              <p>[Imagen del IDE]</p>
+            </div>
+            <p>
+              Entorno de desarrollo integrado con soporte para múltiples lenguajes y proyectos.
+            </p>
+            <p>Incluido en: Plan Pro y Empresa.</p>
+            <a href="/carrito">Ir a suscripción</a>
+          </article>
+        </div>
+      </section>
+
+
+</Layout>

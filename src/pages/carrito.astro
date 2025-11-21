@@ -1,0 +1,59 @@
+---
+import MainLayout from "../layouts/Layout.astro";
+---
+
+<MainLayout>
+  <section>
+    <h1>Carrito de la compra</h1>
+    <p>
+      Revisa el paquete de suscripción que vas a contratar antes de continuar con el pago.
+    </p>
+  </section>
+
+  <!-- Contenido principal del carrito -->
+  <section>
+    <!-- Columna izquierda: detalle del plan seleccionado -->
+    <div>
+      <h2>Detalle del paquete</h2>
+
+      <article>
+        <h3>Plan Pro</h3>
+        <p>
+          Incluye editor de textos, editor de imágenes, editor de vídeo e IDE.
+        </p>
+        <p>
+          Ideal para creadores de contenido, estudiantes avanzados y pequeños equipos.
+        </p>
+        <p>Precio: 19,99 €/mes</p>
+
+        <!-- En un futuro aquí podrías permitir cambiar o quitar el plan -->
+        <button>Quitar del carrito</button>
+      </article>
+
+      <!-- Mensaje importante: requisito de estar registrado / logueado -->
+      <div>
+        <h3>Inicio de sesión requerido</h3>
+        <p>
+          Para gestionar suscripciones y completar la compra,
+          es necesario que tengas una cuenta y que hayas iniciado sesión.
+        </p>
+        <p>
+          <a href="/login">Iniciar sesión</a> |
+          <a href="/registro">Registrarse</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Columna derecha: resumen y botón de continuar -->
+    <div>
+      <h2>Resumen de la compra</h2>
+
+      <p>Plan seleccionado: <strong>Plan Pro</strong></p>
+      <p>Total: <strong>19,99 €/mes</strong></p>
+
+      <!-- En un sistema real, aquí solo podrías continuar si estás logueado.
+           En el prototipo, simplemente enlazamos a la página de Checkout. -->
+      <a href="/checkout">Finalizar compra</a>
+    </div>
+  </section>
+</MainLayout>

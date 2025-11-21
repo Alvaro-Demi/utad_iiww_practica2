@@ -1,0 +1,64 @@
+---
+import "../styles/global.css"; 
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Demineitor</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div>
+					<!--Logo -->
+					<a href="/">Demineitor</a>
+				</div>
+
+				<ul>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/productos">Productos</a></li>
+					<li><a href="/carrito">Carrito</a></li>
+				</ul>
+				
+				<div>
+					<!-- Zona usuario + búsqueda -->
+					<form action="/productos" method="get">
+						<input
+							type="search"
+							name="q"
+							placeholder="Buscar productos..."
+						/>
+						<button type="submit">Buscar</button>
+					</form>
+
+					<a href="/login">Iniciar sesión</a>
+					<a href="/registro">Registrarse</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<!-- Aquí se insertará el contenido de cada página -->
+			<slot />
+		</main>
+		<footer>
+			<p>© 2025 Demineitor. Todos los derechos reservados.</p>
+			<a href="#">Aviso legal</a> ·
+			<a href="#">Política de privacidad</a> ·
+			<a href="#">Contacto</a>
+		</footer>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
