@@ -1,0 +1,21 @@
+.cart {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: $space-5;
+  }
+  
+  @media (max-width: 900px) {
+    .cart { grid-template-columns: 1fr; }
+  }
+  
+  .notice {
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: $space-4;
+    background: rgba(109, 94, 252, 0.08);
+  }
+  
+  .notice a {
+    text-decoration: underline;
+  }
+  

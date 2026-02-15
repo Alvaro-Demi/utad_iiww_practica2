@@ -6,37 +6,41 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+
 	<!-- HERO / PRESENTACIÓN -->
-	<section>
-		<h1>El paquete definitivo para creadores digitales</h1>
-		<p>
+	<section class="hero">
+		<h1 class="hero__title">El paquete definitivo para creadores digitales</h1>
+		<p class="hero__subtitle">
 		  Demineitor reúne editor de textos, editor de imágenes, editor de vídeo e IDE
 		  en una única plataforma para desarrollar todos tus proyectos.
 		</p>
-		<a href="/productos"><button>Ver planes de suscripción</button></a>
+		<div class="hero__actions">
+			<a class="btn btn--primary" href="#planes">Ver planes</a>
+			<a class="btn" href="/productos">Ver productos</a>
+		  </div>
 	  </section>
 	
 	  <!-- HERRAMIENTAS INCLUIDAS -->
-	  <section>
+	  <section class="section reveal">
 		<h2>Herramientas incluidas</h2>
 	
-		<div>
-		  <article>
+		<div class="grid grid--2">
+		  <article class="card">
 			<h3>Editor de textos</h3>
 			<p>Redacta documentos técnicos, apuntes y artículos de forma organizada.</p>
 		  </article>
 	
-		  <article>
+		  <article class="card">
 			<h3>Editor de imágenes</h3>
 			<p>Retoque básico y avanzado para tus recursos gráficos.</p>
 		  </article>
 	
-		  <article>
+		  <article class="card">
 			<h3>Editor de vídeo</h3>
 			<p>Edita y exporta tus vídeos para redes, presentaciones o demos.</p>
 		  </article>
 	
-		  <article>
+		  <article class="card">
 			<h3>IDE</h3>
 			<p>Entorno de desarrollo integrado para tus proyectos de programación.</p>
 		  </article>
@@ -44,44 +48,33 @@ import Layout from '../layouts/Layout.astro';
 	  </section>
 
 	  <!-- PAYWALL / PLANES -->
-  <section>
+  <section class="section reveal" id="planes">
     <h2>Planes de suscripción</h2>
 
-    <div>
-      <article>
-        <h3>Básico</h3>
-        <p>Ideal para estudiantes y usuarios individuales.</p>
-        <ul>
-          <li>Editor de textos</li>
-          <li>Editor de imágenes</li>
-          <li>Soporte estándar</li>
-        </ul>
-        <p>9,99 €/mes</p>
-        <a href="/carrito"><button>Elegir plan Básico</button></a>
-      </article>
+    <div class="grid grid--3">
+		<article class="card">
+			<span class="badge">Básico</span>
+			<h3 class="card__title">Básico</h3>
+			<p class="card__text">Ideal para estudiantes y usuarios individuales.</p>
+			<p><strong>9,99 €/mes</strong></p>
+			<a class="btn"  href="/carrito"> <span>Elegir plan Básico</span></a>
+		  </article>
 
-	  <article>
-        <h3>Pro</h3>
-        <p>Perfecto para creadores de contenido y pequeños equipos.</p>
-        <ul>
-          <li>Todo lo del plan Básico</li>
-          <li>Editor de vídeo</li>
-          <li>IDE completo</li>
-        </ul>
-        <p>19,99 €/mes</p>
-             <a href="/carrito"><button>Elegir plan Pro</button></a>
+		  <article class="card card--highlight">
+			<span class="badge">Recomendado</span>
+			<h3 class="card__title">Pro</h3>
+			<p class="card__text">Perfecto para creadores de contenido y pequeños equipos.</p>
+			<p><strong>19,99 €/mes</strong></p>
+			<a class="btn btn--fancy" href="/carrito"> <span>Elegir plan Pro</span></a>
+		  </article>
 
 
-	  <article>
-        <h3>Empresa</h3>
-        <p>Solución para equipos grandes y organizaciones.</p>
-        <ul>
-          <li>Todo lo del plan Pro</li>
-          <li>Gestión de usuarios</li>
-          <li>Soporte prioritario</li>
-        </ul>
-        <p>Consultar precios</p>
-        <a href="/carrito"><button>Contactar ventas</button></a>
-      </article>
+		  <article class="card">
+			<span class="badge">Empresa</span>
+			<h3 class="card__title">Empresa</h3>
+			<p class="card__text">Solución para equipos grandes y organizaciones.</p>
+			<p><strong>Consultar</strong></p>
+			<a class="btn" href="/carrito"> <span>Contactar ventas</span></a>
+		  </article>
 	</div>
 </Layout>

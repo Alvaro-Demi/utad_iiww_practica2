@@ -1,0 +1,107 @@
+:root {
+  --t-fast: 120ms;
+  --t-mid: 180ms;
+  --t-slow: 260ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 1) BOTONES: hover/focus (microinteracción) */
+.btn {
+  position: relative;
+  transition:
+    transform var(--t-mid) var(--ease),
+    box-shadow var(--t-mid) var(--ease),
+    background-color var(--t-mid) var(--ease),
+    border-color var(--t-mid) var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(109, 94, 252, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* 2) CARDS: hover (destacar elementos clicables) */
+.card {
+  transition:
+    transform var(--t-slow) var(--ease),
+    border-color var(--t-slow) var(--ease),
+    box-shadow var(--t-slow) var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(109, 94, 252, 0.45);
+}
+
+/* 3) INPUTS: focus visible (usabilidad + accesibilidad) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="month"],
+input[type="search"] {
+  transition:
+    border-color var(--t-mid) var(--ease),
+    box-shadow var(--t-mid) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus-visible {
+  border-color: rgba(109, 94, 252, 0.7);
+  box-shadow: 0 0 0 4px rgba(109, 94, 252, 0.18);
+}
+
+/* 4) ENTRADA SUAVE: fade + slide para elementos con .reveal */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: fadeUp 520ms var(--ease) both;
+}
+
+/* 5) HEADER: transición suave (sticky ya lo tienes) */
+header {
+  transition:
+    background-color var(--t-slow) var(--ease),
+    border-color var(--t-slow) var(--ease);
+}
+
+header:hover {
+  background: rgba(71, 34, 120, 0.248);
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Accesibilidad: si el usuario prefiere menos movimiento, desactivamos */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Foco accesible global */
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid rgba(109, 94, 252, 0.8);
+  outline-offset: 3px;
+  border-radius: 12px;
+}

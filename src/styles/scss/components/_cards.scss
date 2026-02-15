@@ -1,0 +1,40 @@
+.card {
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: $space-5;
+    box-shadow: $shadow;
+  }
+  .card__title {
+    margin: 0 0 $space-2;
+    font-size: 1.1rem;
+  }
+  
+  .card__text {
+    margin: 0 0 $space-4;
+    color: $muted;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid $border;
+    color: $muted;
+    font-size: 0.85rem;
+  }
+  
+  .card--highlight {
+    border-color: rgba(109, 94, 252, 0.55);
+  }
+  .media {
+    height: 140px;
+    border-radius: $radius;
+    border: 1px solid $border;
+    background: $surface-2;
+    display: grid;
+    place-items: center;
+    color: $muted;
+    margin-bottom: $space-4;
+  }
+  

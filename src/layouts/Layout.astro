@@ -1,5 +1,6 @@
 ---
-import "../styles/global.css"; 
+import "../styles/scss/main.scss";
+const currentPage = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -12,53 +13,81 @@ import "../styles/global.css";
 		<title>Demineitor</title>
 	</head>
 	<body>
+		<a href="#main-content" class="skip-link">Saltar al contenido</a>
 		<header>
-			<nav>
-				<div>
-					<!--Logo -->
-					<a href="/">Demineitor</a>
-				</div>
+			<div class="container">
+				<nav class="nav">
+					<div class="nav__logo">
+						<!--Logo -->
+						<a href="/">Demineitor</a>
+					</div>
 
-				<ul>
-					<li><a href="/">Inicio</a></li>
-					<li><a href="/productos">Productos</a></li>
-					<li><a href="/carrito">Carrito</a></li>
-				</ul>
-				
-				<div>
-					<!-- Zona usuario + búsqueda -->
-					<form action="/productos" method="get">
-						<input
-							type="search"
-							name="q"
-							placeholder="Buscar productos..."
-						/>
-						<button type="submit">Buscar</button>
-					</form>
+					<ul class="nav__links">
+						<li>
+							<a
+								href="/"
+								aria-current={currentPage === "/"
+									? "page"
+									: undefined}>Inicio</a>
+						</li>
+						<li>
+							<a
+								href="/productos"
+								aria-current={currentPage === "/productos"
+									? "page"
+									: undefined}>Productos</a>
+						</li>
+						<li>
+							<a
+								href="/carrito"
+								aria-current={currentPage === "/carrito"
+									? "page"
+									: undefined}>Carrito</a>
+						</li>
+					</ul>
 
-					<a href="/login">Iniciar sesión</a>
-					<a href="/registro">Registrarse</a>
-				</div>
-			</nav>
+					<div class="nav__actions">
+						<form action="/productos" method="get">
+							<input
+								type="search"
+								name="q"
+								placeholder="Buscar productos..."
+							/>
+						</form>
+
+						<a class="btn" href="/login">Iniciar sesión</a>
+						<a class="btn btn--primary" href="/registro"
+							>Registrarse</a
+						>
+					</div>
+				</nav>
+			</div>
 		</header>
-		<main>
-			<!-- Aquí se insertará el contenido de cada página -->
-			<slot />
+		<main id="main-content" tabindex="-1">
+			<div class="container">
+				<!-- Aquí se insertará el contenido de cada página -->
+				<slot />
+			</div>
 		</main>
 		<footer>
-			<p>© 2025 Demineitor. Todos los derechos reservados.</p>
-			<a href="#">Aviso legal</a> ·
-			<a href="#">Política de privacidad</a> ·
-			<a href="#">Contacto</a>
+			<div class="container footer">
+				<p>© 2025 Demineitor · Todos los derechos reservados.</p>
+				
+				<div class="footer__links">
+					<a href="#">Aviso legal</a> ·
+					<a href="#">Política de privacidad</a> ·
+					<a href="#">Contacto</a>
+				</div>
+			</div>
 		</footer>
 	</body>
-</html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<style>
+		html,
+		body {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</html>

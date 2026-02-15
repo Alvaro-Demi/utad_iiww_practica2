@@ -1,0 +1,36 @@
+.auth {
+    display: grid;
+    place-items: center;
+    padding: $space-7 0;
+  }
+  
+  .auth__card {
+    width: 100%;
+    max-width: 520px;
+  }
+  
+  .auth__title {
+    margin: 0 0 $space-2;
+  }
+  
+  .auth__subtitle {
+    margin: 0 0 $space-5;
+    color: $muted;
+  }
+  
+  .auth__actions {
+    display: flex;
+    gap: $space-3;
+    flex-wrap: wrap;
+    margin-top: $space-4;
+  }
+  
+  .helper {
+    margin-top: $space-4;
+    color: $muted;
+  }
+  
+  .helper a {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,21 @@
+@import "./base/tokens";
+@import "./base/reset";
+@import "./base/typography";
+
+@import "./components/layout";
+@import "./components/navbar";
+@import "./components/buttons";
+@import "./components/cards";
+@import "./components/forms";
+
+@import "./components/hero";
+@import "./components/grid";
+
+@import "./components/animations";
+
+/* Pages (de momento vacío, ya lo iremos llenando) */
+// @import "./pages/home";
+// @import "./pages/products";
+@import "./pages/auth";
+@import "./pages/cart";
+@import "./pages/checkout";

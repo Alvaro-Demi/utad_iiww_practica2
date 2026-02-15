@@ -1,0 +1,14 @@
+label { display: inline-block; margin-bottom: $space-2; color: $muted; }
+
+input, button {
+  font: inherit;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="month"], input[type="search"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid $border;
+  background: $surface-2;
+  color: $text;
+}

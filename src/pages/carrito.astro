@@ -3,57 +3,61 @@ import MainLayout from "../layouts/Layout.astro";
 ---
 
 <MainLayout>
-  <section>
-    <h1>Carrito de la compra</h1>
-    <p>
-      Revisa el paquete de suscripción que vas a contratar antes de continuar con el pago.
+  <section class="hero">
+    <h1 class="hero__title">Carrito de la compra</h1>
+    <p class="hero__subtitle">
+      Revisa el paquete seleccionado antes de continuar con el pago.
     </p>
+
+    <div class="hero__actions">
+      <a class="btn" href="/productos">Seguir viendo productos</a>
+      <a class="btn btn--primary" href="/checkout">Ir a checkout</a>
+    </div>
   </section>
 
   <!-- Contenido principal del carrito -->
-  <section>
-    <!-- Columna izquierda: detalle del plan seleccionado -->
+  <section class="section cart reveal">
+    <!-- Izquierda -->
     <div>
-      <h2>Detalle del paquete</h2>
-
-      <article>
-        <h3>Plan Pro</h3>
-        <p>
+      <article class="card">
+        <h2>Detalle del paquete</h2>
+        <h3 class="card__title">Plan Pro</h3>
+        <p class="card__text">
           Incluye editor de textos, editor de imágenes, editor de vídeo e IDE.
         </p>
-        <p>
+        <p class="card__text">
           Ideal para creadores de contenido, estudiantes avanzados y pequeños equipos.
         </p>
-        <p>Precio: 19,99 €/mes</p>
+        <p><strong>19,99 €/mes</strong></p>
 
-        <!-- En un futuro aquí podrías permitir cambiar o quitar el plan -->
-        <button>Quitar del carrito</button>
+        <div style="display:flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn" type="button">Quitar del carrito</button>
+          <a class="btn" href="/productos">Cambiar de plan</a>
+        </div>
       </article>
 
-      <!-- Mensaje importante: requisito de estar registrado / logueado -->
-      <div>
-        <h3>Inicio de sesión requerido</h3>
-        <p>
-          Para gestionar suscripciones y completar la compra,
-          es necesario que tengas una cuenta y que hayas iniciado sesión.
+      <div class="notice" style="margin-top: 16px;">
+        <h3 style="margin-top:0;">Inicio de sesión requerido</h3>
+        <p style="margin-bottom: 8px;">
+          Para gestionar suscripciones y completar la compra, es necesario iniciar sesión o registrarse.
         </p>
-        <p>
-          <a href="/login">Iniciar sesión</a> |
-          <a href="/registro">Registrarse</a>
+        <p style="margin:0;">
+          <a href="/login">Iniciar sesión</a> · <a href="/registro">Registrarse</a>
         </p>
       </div>
     </div>
 
-    <!-- Columna derecha: resumen y botón de continuar -->
-    <div>
-      <h2>Resumen de la compra</h2>
+    <!-- Derecha -->
+    <aside class="card">
+      <h2>Resumen</h2>
+      <p class="card__text">Plan seleccionado: <strong>Plan Pro</strong></p>
+      <p class="card__text">Facturación: <strong>Mensual</strong></p>
+      <p><strong>Total: 19,99 €/mes</strong></p>
 
-      <p>Plan seleccionado: <strong>Plan Pro</strong></p>
-      <p>Total: <strong>19,99 €/mes</strong></p>
-
-      <!-- En un sistema real, aquí solo podrías continuar si estás logueado.
-           En el prototipo, simplemente enlazamos a la página de Checkout. -->
-      <a href="/checkout">Finalizar compra</a>
-    </div>
+      <a class="btn btn--primary" href="/checkout">Finalizar compra</a>
+      <p class="card__text" style="margin-top: 12px;">
+        * En una versión real, solo se permitiría continuar si estás autenticado.
+      </p>
+    </aside>
   </section>
 </MainLayout>

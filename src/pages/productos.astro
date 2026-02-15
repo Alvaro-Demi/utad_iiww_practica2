@@ -3,80 +3,81 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-    <section>
-        <h1>Productos incluidos en Demineitor</h1>
-        <p>
+    <section class="hero">
+        <h1 class="hero__title">Productos incluidos en Demineitor</h1>
+        <p class="hero__subtitle">
           Explora las herramientas disponibles en el paquete: editor de textos, editor de imágenes,
           editor de vídeo e IDE.
         </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/carrito">Ir al carrito</a>
+          <a class="btn" href="/">Volver a inicio</a>
+        </div>
       </section>
     
       <!-- Opcional: barra de búsqueda/filtro simple -->
-      <section>
+      <section class="section reveal">
         <h2>Buscar herramientas</h2>
-        <form action="/productos" method="get">
-          <label for="busqueda">Buscar herramienta:</label>
+    <form action="/productos" method="get" class="card">
+      <div class="grid grid--2">
+        <div>
+          <label for="busqueda">Buscar herramienta</label>
           <input id="busqueda" type="search" name="q" placeholder="Editor de..." />
-          <button type="submit">Buscar</button>
-        </form>
+        </div>
+        <div style="display:flex; align-items:end;">
+          <button class="btn btn--primary" type="submit">Buscar</button>
+        </div>
+      </div>
+    </form>
       </section>
     
       <!-- Grid de productos -->
-      <section>
+      <section class="section reveal">
         <h2>Herramientas</h2>
     
-        <div>
+        <div class="grid grid--2">
           <!-- Producto 1 -->
-          <article>
-            <h3>Editor de textos</h3>
-            <!-- Aquí en el futuro podrías poner una imagen -->
-            <div>
-              <p>[Imagen del editor de textos]</p>
-            </div>
-            <p>
+          <article class="card">
+            <div class="media">Imagen</div>
+            <h3 class="card__title">Editor de textos</h3>
+            <p class="card__text">
               Redacta y organiza documentos, apuntes y artículos con soporte para proyectos largos.
             </p>
-            <p>Incluido en: Plan Básico, Pro y Empresa.</p>
-            <a href="/carrito">Ir a suscripción</a>
+            <p class="card__text">Incluido en: Básico, Pro y Empresa.</p>
+            <a class="btn btn--primary" href="/carrito">Ir a suscripción</a>
           </article>
     
           <!-- Producto 2 -->
-          <article>
-            <h3>Editor de imágenes</h3>
-            <div>
-              <p>[Imagen del editor de imágenes]</p>
-            </div>
-            <p>
+          <article class="card">
+            <div class="media">Imagen</div>
+            <h3 class="card__title">Editor de imágenes</h3>
+            <p class="card__text">
               Retoque y edición de imágenes para recursos gráficos, mockups y redes sociales.
             </p>
-            <p>Incluido en: Plan Básico, Pro y Empresa.</p>
-            <a href="/carrito">Ir a suscripción</a>
+            <p class="card__text">Incluido en: Básico, Pro y Empresa.</p>
+            <a class="btn btn--primary" href="/carrito">Ir a suscripción</a>
           </article>
     
           <!-- Producto 3 -->
-          <article>
-            <h3>Editor de vídeo</h3>
-            <div>
-              <p>[Imagen del editor de vídeo]</p>
-            </div>
-            <p>
+          <article class="card">
+            <div class="media">Imagen</div>
+            <h3 class="card__title">Editor de vídeo</h3>
+            <p class="card__text">
               Crea y edita vídeos para presentaciones, redes sociales o demostraciones de producto.
             </p>
-            <p>Incluido en: Plan Pro y Empresa.</p>
-            <a href="/carrito">Ir a suscripción</a>
+            <p class="card__text">Incluido en: Pro y Empresa.</p>
+            <a class="btn btn--primary" href="/carrito">Ir a suscripción</a>
           </article>
     
           <!-- Producto 4 -->
-          <article>
-            <h3>IDE</h3>
-            <div>
-              <p>[Imagen del IDE]</p>
-            </div>
-            <p>
+          <article class="card">
+            <div class="media">Imagen</div>
+            <h3 class="card__title">IDE</h3>
+            <p class="card__text">
               Entorno de desarrollo integrado con soporte para múltiples lenguajes y proyectos.
             </p>
-            <p>Incluido en: Plan Pro y Empresa.</p>
-            <a href="/carrito">Ir a suscripción</a>
+            <p class="card__text">Incluido en: Pro y Empresa.</p>
+            <a class="btn btn--primary" href="/carrito">Ir a suscripción</a>
           </article>
         </div>
       </section>
